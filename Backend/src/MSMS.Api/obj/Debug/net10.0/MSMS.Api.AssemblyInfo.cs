@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MSMS.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c8d2040bf12e7e474242413f5a89d7b029ba9a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("MSMS.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MSMS.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
