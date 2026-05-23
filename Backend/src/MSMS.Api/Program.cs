@@ -93,8 +93,26 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
+
+app.Lifetime.ApplicationStarted.Register(() =>
+{
+    _ = Task.Run(async () =>
+    {
+        try
+        {
+            await DatabaseSeeder.SeedDemoAsync(app.Services);
+        }
+        catch (Exception ex)
+        {
+            var logger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("DatabaseSeeder");
+            logger.LogError(ex, "Demo data seeding failed.");
+        }
+    });
+});
+
 app.MapControllers();
-await DatabaseSeeder.SeedAsync(app.Services);
+
+await DatabaseSeeder.PrepareAsync(app.Services);
 
 await app.RunAsync();
 

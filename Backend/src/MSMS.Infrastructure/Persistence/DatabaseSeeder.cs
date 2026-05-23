@@ -17,26 +17,16 @@ namespace MSMS.Infrastructure.Persistence;
 
 
 public static class DatabaseSeeder
-
 {
-
-    public static async Task SeedAsync(IServiceProvider services, CancellationToken cancellationToken = default)
-
+    /// <summary>Runs migrations and ensures admin/roles exist before the web server starts.</summary>
+    public static async Task PrepareAsync(IServiceProvider services, CancellationToken cancellationToken = default)
     {
-
         using var scope = services.CreateScope();
-
         var provider = scope.ServiceProvider;
 
-
-
         var roleManager = provider.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
-
         var userManager = provider.GetRequiredService<UserManager<ApplicationUser>>();
-
         var db = provider.GetRequiredService<ApplicationDbContext>();
-
-
 
         await db.Database.MigrateAsync(cancellationToken);
 
@@ -131,15 +121,18 @@ public static class DatabaseSeeder
 
 
             await db.SaveChangesAsync(cancellationToken);
-
         }
-
-
-
-        await DemoDataSeeder.SeedAsync(services, cancellationToken);
-
     }
 
+    /// <summary>Heavy demo dataset — run in background so Railway healthchecks pass quickly.</summary>
+    public static Task SeedDemoAsync(IServiceProvider services, CancellationToken cancellationToken = default) =>
+        DemoDataSeeder.SeedAsync(services, cancellationToken);
+
+    public static async Task SeedAsync(IServiceProvider services, CancellationToken cancellationToken = default)
+    {
+        await PrepareAsync(services, cancellationToken);
+        await SeedDemoAsync(services, cancellationToken);
+    }
 }
 
 

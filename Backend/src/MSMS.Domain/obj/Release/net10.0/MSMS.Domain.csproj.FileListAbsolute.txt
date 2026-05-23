@@ -9,3 +9,4 @@ C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Domain\obj\Release\net10.0\MS
 C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Domain\obj\Release\net10.0\refint\MSMS.Domain.dll
 C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Domain\obj\Release\net10.0\MSMS.Domain.pdb
 C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Domain\obj\Release\net10.0\ref\MSMS.Domain.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Domain\obj\Release\net10.0\MSMS.Domain.sourcelink.json

@@ -139,3 +139,4 @@ C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Api\obj\Release\net10.0\refin
 C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Api\obj\Release\net10.0\MSMS.Api.pdb
 C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Api\obj\Release\net10.0\MSMS.Api.genruntimeconfig.cache
 C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Api\obj\Release\net10.0\ref\MSMS.Api.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Api\obj\Release\net10.0\MSMS.Api.sourcelink.json
