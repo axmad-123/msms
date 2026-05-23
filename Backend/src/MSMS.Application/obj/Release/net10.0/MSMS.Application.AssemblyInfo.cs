@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MSMS.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73f64b15bc913493eb583b26f847f3ba621d34a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+667ab3cb1d442ba48b8e467b42ccd984eaea7852")]
 [assembly: System.Reflection.AssemblyProductAttribute("MSMS.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MSMS.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

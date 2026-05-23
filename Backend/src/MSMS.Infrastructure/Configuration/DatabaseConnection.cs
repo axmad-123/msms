@@ -9,7 +9,14 @@ public static class DatabaseConnection
         var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
         if (!string.IsNullOrWhiteSpace(databaseUrl))
         {
-            return FromDatabaseUrl(databaseUrl);
+            try
+            {
+                return FromDatabaseUrl(databaseUrl);
+            }
+            catch (UriFormatException)
+            {
+                // Fall back to appsettings when DATABASE_URL is malformed on the host.
+            }
         }
 
         return configuration.GetConnectionString("DefaultConnection")

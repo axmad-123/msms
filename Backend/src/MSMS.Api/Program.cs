@@ -7,11 +7,8 @@ using MSMS.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var port = Environment.GetEnvironmentVariable("PORT");
-if (!string.IsNullOrWhiteSpace(port))
-{
-    builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
-}
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
@@ -94,25 +91,30 @@ app.UseAuthorization();
 
 app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
 
+app.MapControllers();
+
 app.Lifetime.ApplicationStarted.Register(() =>
 {
     _ = Task.Run(async () =>
     {
+        var logger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("DatabaseSeeder");
         try
         {
+            logger.LogInformation("Running database migrations and core seed...");
+            await DatabaseSeeder.PrepareAsync(app.Services);
+            logger.LogInformation("Running demo data seed...");
             await DatabaseSeeder.SeedDemoAsync(app.Services);
+            logger.LogInformation("Database seeding completed.");
         }
         catch (Exception ex)
         {
-            var logger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("DatabaseSeeder");
-            logger.LogError(ex, "Demo data seeding failed.");
+            logger.LogError(ex, "Database setup failed.");
         }
     });
 });
 
-app.MapControllers();
-
-await DatabaseSeeder.PrepareAsync(app.Services);
+var startupLogger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("Startup");
+startupLogger.LogInformation("Listening on http://0.0.0.0:{Port} (DATABASE_URL set: {HasDb})", port, !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("DATABASE_URL")));
 
 await app.RunAsync();
 
