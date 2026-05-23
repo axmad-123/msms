@@ -1,0 +1,424 @@
+{
+  "info": {
+    "name": "MSMS API",
+    "description": "Modern School Management System - import into Thunder Client (Import > Postman)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5136" },
+    { "key": "token", "value": "" },
+    { "key": "classId", "value": "00000000-0000-0000-0000-000000000001" },
+    { "key": "subjectId", "value": "00000000-0000-0000-0000-000000000002" },
+    { "key": "studentId", "value": "00000000-0000-0000-0000-000000000003" },
+    { "key": "parentId", "value": "00000000-0000-0000-0000-000000000004" },
+    { "key": "teacherId", "value": "00000000-0000-0000-0000-000000000005" },
+    { "key": "sessionId", "value": "00000000-0000-0000-0000-000000000006" },
+    { "key": "examCatalogId", "value": "00000000-0000-0000-0000-000000000007" },
+    { "key": "paymentId", "value": "00000000-0000-0000-0000-000000000008" },
+    { "key": "monthlyFeeId", "value": "00000000-0000-0000-0000-000000000009" }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{token}}", "type": "string" }]
+  },
+  "item": [
+    {
+      "name": "01 - Auth",
+      "item": [
+        {
+          "name": "Login (Admin)",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@msms.local\",\n  \"password\": \"ChangeMe!12345\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"PASTE_REFRESH_TOKEN_HERE\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/refresh"
+          }
+        },
+        {
+          "name": "Register Teacher (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"teacher1@school.com\",\n  \"password\": \"Teacher@12345\",\n  \"fullName\": \"Ahmed Hassan\",\n  \"role\": \"Teacher\",\n  \"teacherEmployeeNumber\": \"T-001\",\n  \"teacherFirstName\": \"Ahmed\",\n  \"teacherLastName\": \"Hassan\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/register"
+          }
+        },
+        {
+          "name": "Register Student (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student1@school.com\",\n  \"password\": \"Student@12345\",\n  \"fullName\": \"Ali Mohamed\",\n  \"role\": \"Student\",\n  \"studentNumber\": \"STU-001\",\n  \"studentFirstName\": \"Ali\",\n  \"studentLastName\": \"Mohamed\",\n  \"studentDateOfBirth\": \"2012-05-10\",\n  \"studentClassId\": \"{{classId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/register"
+          }
+        },
+        {
+          "name": "Register Parent (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"parent1@school.com\",\n  \"password\": \"Parent@12345\",\n  \"fullName\": \"Fatima Ali\",\n  \"role\": \"Parent\",\n  \"parentFirstName\": \"Fatima\",\n  \"parentLastName\": \"Ali\",\n  \"parentPhone\": \"+252611234567\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/register"
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - Admin School",
+      "item": [
+        {
+          "name": "List Classes",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/admin/school/classes" }
+        },
+        {
+          "name": "Create Class",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Grade 8A\",\n  \"gradeLevel\": \"8\",\n  \"section\": \"A\",\n  \"academicYear\": \"2025-2026\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/school/classes"
+          }
+        },
+        {
+          "name": "Update Class",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Grade 8A\",\n  \"gradeLevel\": \"8\",\n  \"section\": \"A\",\n  \"academicYear\": \"2025-2026\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/school/classes/{{classId}}"
+          }
+        },
+        {
+          "name": "List Subjects",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/admin/school/subjects" }
+        },
+        {
+          "name": "Create Subject",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Mathematics\",\n  \"code\": \"MATH-08\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/school/subjects"
+          }
+        },
+        {
+          "name": "Assign Teacher to Class+Subject",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"teacherId\": \"{{teacherId}}\",\n  \"subjectId\": \"{{subjectId}}\",\n  \"classId\": \"{{classId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/school/teacher-assignments"
+          }
+        },
+        {
+          "name": "List Teacher Assignments",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/admin/school/teacher-assignments?teacherId={{teacherId}}" }
+        }
+      ]
+    },
+    {
+      "name": "03 - Admin People",
+      "item": [
+        {
+          "name": "List Students",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/admin/people/students" }
+        },
+        {
+          "name": "Get Student",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/admin/people/students/{{studentId}}" }
+        },
+        {
+          "name": "Create Student",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student2@school.com\",\n  \"password\": \"Student@12345\",\n  \"fullName\": \"Ayaan Omar\",\n  \"studentNumber\": \"STU-002\",\n  \"firstName\": \"Ayaan\",\n  \"lastName\": \"Omar\",\n  \"dateOfBirth\": \"2013-01-20\",\n  \"classId\": \"{{classId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/people/students"
+          }
+        },
+        {
+          "name": "Update Student",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Ayaan\",\n  \"lastName\": \"Omar\",\n  \"dateOfBirth\": \"2013-01-20\",\n  \"classId\": \"{{classId}}\",\n  \"status\": 0\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/people/students/{{studentId}}"
+          }
+        },
+        {
+          "name": "List Parents",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/admin/people/parents" }
+        },
+        {
+          "name": "Create Parent",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"parent2@school.com\",\n  \"password\": \"Parent@12345\",\n  \"fullName\": \"Hodan Yusuf\",\n  \"firstName\": \"Hodan\",\n  \"lastName\": \"Yusuf\",\n  \"phone\": \"+252612345678\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/people/parents"
+          }
+        },
+        {
+          "name": "Link Parent to Student",
+          "request": { "method": "POST", "url": "{{baseUrl}}/api/admin/people/parents/{{parentId}}/students/{{studentId}}" }
+        },
+        {
+          "name": "List Teachers",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/admin/people/teachers" }
+        },
+        {
+          "name": "Create Teacher",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"teacher2@school.com\",\n  \"password\": \"Teacher@12345\",\n  \"fullName\": \"Sara Abdi\",\n  \"employeeNumber\": \"T-002\",\n  \"firstName\": \"Sara\",\n  \"lastName\": \"Abdi\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/people/teachers"
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 - Attendance",
+      "item": [
+        {
+          "name": "Create Session (Admin) - Session 1",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"classId\": \"{{classId}}\",\n  \"sessionDate\": \"2026-05-15\",\n  \"sessionNumber\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/attendance/sessions"
+          }
+        },
+        {
+          "name": "Create Session (Admin) - Session 2",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"classId\": \"{{classId}}\",\n  \"sessionDate\": \"2026-05-15\",\n  \"sessionNumber\": 2\n}"
+            },
+            "url": "{{baseUrl}}/api/attendance/sessions"
+          }
+        },
+        {
+          "name": "Record Attendance (Teacher)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"studentId\": \"{{studentId}}\", \"mark\": 0 },\n  { \"studentId\": \"ANOTHER-STUDENT-GUID\", \"mark\": 1 }\n]"
+            },
+            "url": "{{baseUrl}}/api/attendance/sessions/{{sessionId}}/records"
+          }
+        },
+        {
+          "name": "List Class Sessions",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/attendance/classes/{{classId}}/sessions?date=2026-05-15" }
+        },
+        {
+          "name": "Student Day Summaries",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/attendance/students/{{studentId}}/day-summaries?from=2026-05-01&to=2026-05-31" }
+        },
+        {
+          "name": "Close Session (Admin)",
+          "request": { "method": "POST", "url": "{{baseUrl}}/api/attendance/sessions/{{sessionId}}/close" }
+        }
+      ]
+    },
+    {
+      "name": "05 - Exams",
+      "item": [
+        {
+          "name": "List Exam Catalog",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/exam-catalog?academicYear=2025-2026" }
+        },
+        {
+          "name": "Create Exam Catalog",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"examType\": 1,\n  \"name\": \"First Term Exam\",\n  \"academicYear\": \"2025-2026\"\n}"
+            },
+            "url": "{{baseUrl}}/api/exam-catalog"
+          }
+        },
+        {
+          "name": "Bulk Enter Results (Teacher)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"classId\": \"{{classId}}\",\n  \"subjectId\": \"{{subjectId}}\",\n  \"examType\": 1,\n  \"academicYear\": \"2025-2026\",\n  \"lines\": [\n    {\n      \"studentId\": \"{{studentId}}\",\n      \"marks\": 85.5,\n      \"maxMarks\": 100,\n      \"grade\": \"A\"\n    }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/exam-results/bulk"
+          }
+        },
+        {
+          "name": "Get Student Results",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/exam-results/students/{{studentId}}" }
+        },
+        {
+          "name": "Get Class Subject Results",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/exam-results/classes/{{classId}}/subjects/{{subjectId}}?examType=1" }
+        }
+      ]
+    },
+    {
+      "name": "06 - Finance",
+      "item": [
+        {
+          "name": "Upsert Monthly Fee",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": \"{{studentId}}\",\n  \"year\": 2026,\n  \"month\": 5,\n  \"amount\": 50.00,\n  \"academicYear\": \"2025-2026\"\n}"
+            },
+            "url": "{{baseUrl}}/api/finance/monthly-fees"
+          }
+        },
+        {
+          "name": "List Monthly Fees",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/finance/monthly-fees?studentId={{studentId}}" }
+        },
+        {
+          "name": "Create Payment",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": \"{{studentId}}\",\n  \"year\": 2026,\n  \"month\": 5,\n  \"amount\": 50.00,\n  \"paymentDate\": \"2026-05-15\",\n  \"status\": 1,\n  \"notes\": \"Paid in cash at office\"\n}"
+            },
+            "url": "{{baseUrl}}/api/finance/payments"
+          }
+        },
+        {
+          "name": "List Payments",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/finance/payments?studentId={{studentId}}" }
+        },
+        {
+          "name": "Update Payment",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"year\": 2026,\n  \"month\": 5,\n  \"amount\": 50.00,\n  \"paymentDate\": \"2026-05-15\",\n  \"status\": 1,\n  \"notes\": \"Updated payment note\"\n}"
+            },
+            "url": "{{baseUrl}}/api/finance/payments/{{paymentId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 - Lifecycle",
+      "item": [
+        {
+          "name": "Promote Student",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": \"{{studentId}}\",\n  \"toClassId\": \"{{classId}}\",\n  \"promotionDate\": \"2026-06-01\",\n  \"academicYear\": \"2025-2026\"\n}"
+            },
+            "url": "{{baseUrl}}/api/lifecycle/promotions"
+          }
+        },
+        {
+          "name": "Graduate Student",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": \"{{studentId}}\",\n  \"graduationDate\": \"2026-06-15\",\n  \"academicYear\": \"2025-2026\"\n}"
+            },
+            "url": "{{baseUrl}}/api/lifecycle/graduations"
+          }
+        },
+        {
+          "name": "List Graduated Students",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/lifecycle/graduated-students" }
+        }
+      ]
+    },
+    {
+      "name": "08 - Portals",
+      "item": [
+        {
+          "name": "Parent - My Children",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/parent/children" }
+        },
+        {
+          "name": "Student - My Exam Results",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/student/me/exam-results" }
+        },
+        {
+          "name": "Teacher - My Assignments",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/teacher/me/assignments" }
+        }
+      ]
+    }
+  ]
+}

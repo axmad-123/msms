@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IxKBXnzXlr8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hp\\OneDrive\\Desktop\\MSMS\\Backend\\src\\MSMS.Application\\MSMS.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.8\\microsoft.extensions.dependencyinjection.abstractions.10.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

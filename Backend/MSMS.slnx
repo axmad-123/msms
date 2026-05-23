@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MSMS.Api/MSMS.Api.csproj" />
+    <Project Path="src/MSMS.Application/MSMS.Application.csproj" />
+    <Project Path="src/MSMS.Domain/MSMS.Domain.csproj" />
+    <Project Path="src/MSMS.Infrastructure/MSMS.Infrastructure.csproj" />
+  </Folder>
+</Solution>

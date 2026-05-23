@@ -1,0 +1,15 @@
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\bin\Release\net10.0\MSMS.Application.deps.json
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\bin\Release\net10.0\MSMS.Application.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\bin\Release\net10.0\MSMS.Application.pdb
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\bin\Release\net10.0\MSMS.Domain.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\bin\Release\net10.0\MSMS.Domain.pdb
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\MSMS.Application.csproj.AssemblyReference.cache
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\MSMS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\MSMS.Application.AssemblyInfoInputs.cache
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\MSMS.Application.AssemblyInfo.cs
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\MSMS.Application.csproj.CoreCompileInputs.cache
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\MSMS.App.F7947108.Up2Date
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\MSMS.Application.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\refint\MSMS.Application.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\MSMS.Application.pdb
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Application\obj\Release\net10.0\ref\MSMS.Application.dll

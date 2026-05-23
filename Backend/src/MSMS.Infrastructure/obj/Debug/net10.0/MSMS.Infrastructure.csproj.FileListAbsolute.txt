@@ -1,0 +1,17 @@
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\bin\Debug\net10.0\MSMS.Infrastructure.deps.json
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\bin\Debug\net10.0\MSMS.Infrastructure.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\bin\Debug\net10.0\MSMS.Infrastructure.pdb
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\bin\Debug\net10.0\MSMS.Application.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\bin\Debug\net10.0\MSMS.Domain.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\bin\Debug\net10.0\MSMS.Domain.pdb
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\bin\Debug\net10.0\MSMS.Application.pdb
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\MSMS.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\MSMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\MSMS.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\MSMS.Infrastructure.AssemblyInfo.cs
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\MSMS.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\MSMS.Inf.E0DDF560.Up2Date
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\MSMS.Infrastructure.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\refint\MSMS.Infrastructure.dll
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\MSMS.Infrastructure.pdb
+C:\Users\hp\OneDrive\Desktop\MSMS\Backend\src\MSMS.Infrastructure\obj\Debug\net10.0\ref\MSMS.Infrastructure.dll
